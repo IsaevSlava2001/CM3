@@ -1,0 +1,16 @@
+$ git init
+
+Initialized empty Git repository in C:/Users/1655299/Desktop/Новая папка/.git/
+
+Вячеслав@LAPTOP-E3EEPQMQ MINGW64 ~/Desktop/Новая папка (main)
+$ git config user.email IsaevSlava.2001@yandex.ru
+
+Вячеслав@LAPTOP-E3EEPQMQ MINGW64 ~/Desktop/Новая папка (main)
+$ git config user.name coder1
+
+Вячеслав@LAPTOP-E3EEPQMQ MINGW64 ~/Desktop/Новая папка (main)
+$ touch prog.py
+
+Вячеслав@LAPTOP-E3EEPQMQ MINGW64 ~/Desktop/Новая папка (main)
+$ python prog.py
+Hello, world!
