@@ -1,0 +1,19 @@
+git commit
+git branch second
+git branch first
+git checkout master
+git commit
+git commit
+git checkout first
+git commit
+git commit
+git checkout master
+git merge first
+git checkout second
+git commit
+git commit
+git rebase master
+git checkout master
+git merge second
+git reflog
+git checkout e15ba78
