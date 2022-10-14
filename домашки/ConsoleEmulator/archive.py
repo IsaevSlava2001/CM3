@@ -26,10 +26,27 @@ class Archive:
             self.setNamePath[name] = modules
 
     def getData(self, commands):
-        
         if len(commands) > 1:
             dir = self.currentDir
-            if commands[1] != '-l':
+            if commands[1]=='user':
+                catalog=self.chooseItemInDir(self.currentDir+"user/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] == 'cash' and commands[2]=='lost':
+                catalog = self.chooseItemInDir(self.currentDir+"cash/lost/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] == 'cash':
+                catalog = self.chooseItemInDir(self.currentDir+"cash/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] == 'system':
+                catalog = self.chooseItemInDir(self.currentDir+"system/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] == 'data':
+                catalog = self.chooseItemInDir(self.currentDir+"data/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] == 'lost':
+                catalog = self.chooseItemInDir(self.currentDir+"lost/")
+                print(*catalog, sep='    ', end='\n')
+            elif commands[1] != '-l':
                 dir = self.clearPatn(commands[1])
                 # path = self.currentDir+commands[1]
                 catalog = self.chooseItemInDir(dir)
@@ -50,7 +67,7 @@ class Archive:
                         clock = convertClock(d)
                         print(c.month_abbr[d[1]]," ",d[2]," ",clock,"\t", zipdata.file_size, "\t", zipdata.external_attr, "\t", item)
                     except Exception as e:
-                        print(e)    
+                        print(e)
 
         else:
             
