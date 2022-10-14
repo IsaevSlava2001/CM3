@@ -20,6 +20,7 @@ def getDeps(package_name):
     name = url_whl.split("/")[-1]
     whl_file = requests.get(url_whl)
     z = zipfile.ZipFile(io.BytesIO(whl_file.content))
+
     for zip_name in z.namelist():
         if zip_name.endswith("METADATA"):
             metadata = (str(z.read(zip_name), 'utf-8')) 

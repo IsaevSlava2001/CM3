@@ -33,7 +33,7 @@ class Archive:
                 dir = self.clearPatn(commands[1])
                 # path = self.currentDir+commands[1]
                 catalog = self.chooseItemInDir(dir)
-                print(*catalog, sep='    ', end='\n')
+                print("error")
                 # print("ZipFile: {}".format(self.zip.getinfo(path)))
 
 
@@ -66,7 +66,11 @@ class Archive:
             return
         try:
             with self.zip.open(dir) as myfile:
-                print(myfile.read())
+                data=path.split('.')
+                if(len(data)>1):
+                    print(myfile.read())
+                else:
+                    print("it is a directory")
         except Exception as e:
             print(f"{dir} is not file")
 
